@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="header">
+        <h2>Task Planner</h2>
+        <hr>
+    </div>
+
+    <div class="all_inputs">
+        <form action="" >
+            <label for="parent_task">Task</label>
+            <input type="text" name="" id="parent_task">
+            <label for="sub_name">Subtask</label>
+            <input type="text" name="subtask_name" id="subtask_name" >
+            <label for="start_date">Start Date</label>
+            <input type="date" name="" id="start_date" onclick="handleDateChange()">
+            <label for="end_date">End Date</label>
+            <input type="date" name="" id="end_date" onclick="handleDateChange()">
+            <label for="status_check">Status</label>
+           
+            <select name="" id="status_check">
+                <option value="Select status">Select Status</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Due Passed">Due Passed</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button type="submit" id="add_task" value="Add" onclick="add_data()">Add</button>
+
+        </form>
+    </div>
+
+
+    <div class="search_btn">
+        <i class="fa fa-search"></i>
+        <input type="text"  id="search_input" placeholder="Search Here">
+        <button id="search_button">Search</button>
+    </div>
+    <div class="table">
+        <table>
+            <tr id="table-header" style="background-color:aquamarine;">
+                <th>Task Name</th>
+                <th>
+                    Sub Tasks
+                </th>
+                <th>Actions</th>
+            </tr>
+          <tbody id="table_datas">
+          
+          </tbody>
+          
+        </table>
+    </div>
+
+
+    <div class="edit_box" id="form_edit_box">
+        <h2 class="form_header">Update your Details</h2>
+        <button onclick="close_editdetails()" id="close_btn"><i class="fa fa-times"></i></button>
+    
+        
+        <div class="form" id="edit_form">
+            <!-- <input type="hidden" id="index"> -->
+    
+
+
+            <label for="edit_task">Task Name</label>
+            <input type="text" name="edit_task" id="edit_task" Disabled>
+            <!-- <p style="color: red;font-size:10px;margin-top:5px;" id="id_valid"></p> -->
+
+            <label for="edit_subtask">Sub Task</label>
+            <input type="text" name="edit_subtask" id="edit_subtask">
+
+            <label for="edit_start_date">Start date</label>
+            <input type="date" name="edit_start_date" id="edit_start_date" >
+            <!-- <p style="color: red;font-size:10px;margin-top:5px;" id="id_valid"></p> -->
+    
+    
+            <label for="edit_end_date">End date</label>
+            <input  type="date" name="edit_end_date" id="edit_end_date">
+            <!-- <p style="color: red;font-size:10px;margin-top:5px;" id="name_valid"></p> -->
+    
+            
+    
+    
+            <label for="edit_status">Status</label>
+            <select name="edit_status" id="edit_status">
+                <option value="Select status">Select Status</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Due Passed">Due Passed</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <!-- <p style="color: red;font-size:10px;margin-top:5px;" id="gender_valid"></p> -->
+    
+    <input type="hidden" id="idx">
+    
+    
+            <button type="submit"id="edit_btn" value="Update" onclick="update_data()">Update</button>
+       
+        </div>
+    
+     </div>
+    <!-- <script src="script.js"></script> -->
+    <script src="index.js"></script>
+    <!-- <script src="editsubtask.js"></script> -->
+</body>
+
+</html>
